@@ -45,7 +45,7 @@ void Points::calculateXsForY(int yPointCount, int yCoord)
     {
         int xCoord1 = mid1 - xPointCount * (*pointsStep);
         int xCoord2 = mid2 + xPointCount * (*pointsStep);
-        points->insert(std::pair(xCoord1, yCoord));
-        points->insert(std::pair(xCoord2, yCoord));
+        points->insert(std::pair<int, int>(xCoord1, yCoord));
+        points->insert(std::pair<int, int>(xCoord2, yCoord));
     }
 }
