@@ -19,7 +19,6 @@ GraphicsView::GraphicsView(QWidget *parent) : QGraphicsView(parent)
     for(auto square : squares)
     {
         scene->addItem(square->getItem());
-        //connect(square.get(), SIGNAL(SquareXOrOItem::addItem(QGraphicsItem*)), this, SLOT(addToScene(QGraphicsItem*)));
     }
 }
 
