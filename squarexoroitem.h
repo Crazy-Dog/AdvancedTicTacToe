@@ -9,9 +9,15 @@
 
 #include <array>
 
+#include "game.h"
 #include "line.h"
 
 class Line;
+
+/**
+ * @brief The SquareXOrOItem class
+ * using game->getPlayerColor() to set item color in checkForSides() method
+ */
 
 class SquareXOrOItem
 {

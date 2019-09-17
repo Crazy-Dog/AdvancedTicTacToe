@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++17
 
 SOURCES += \
+        game.cpp \
         graphicsview.cpp \
         guielements.cpp \
         line.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
         squarexoroitem.cpp
 
 HEADERS += \
+        game.h \
         graphicsview.h \
         guielements.h \
         line.h \
