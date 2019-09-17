@@ -25,8 +25,8 @@ void Line::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWid
 {
     painter->setPen(*pen);
     painter->drawLine(x1, y1, x2, y2);
-    Q_UNUSED(option);
-    Q_UNUSED(widget);
+    Q_UNUSED(option)
+    Q_UNUSED(widget)
 }
 
 void Line::setPermanent(bool state)
@@ -115,7 +115,7 @@ bool Line::hasBothSquares() const
 
 void Line::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     if(!isPermanent)
     {
         pen->setWidthF(4);
@@ -126,7 +126,7 @@ void Line::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 
 void Line::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    Q_UNUSED(event);
+    Q_UNUSED(event)
     if(!isPermanent)
     {
         pen->setWidthF(2);
