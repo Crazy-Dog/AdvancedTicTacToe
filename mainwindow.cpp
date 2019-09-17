@@ -3,7 +3,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    view = new GraphicsView;
+    Game::getInstance()->startNewGame(3, 2);
+    view = new GraphicsView(Game::getInstance());
     setCentralWidget(view);
 }
 

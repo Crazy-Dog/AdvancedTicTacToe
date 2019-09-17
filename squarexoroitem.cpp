@@ -36,7 +36,7 @@ void SquareXOrOItem::setToNotActive(bool state)
         delete item;
     }
     item = new QGraphicsRectItem(x + 2, y + 2, size - 4, size - 4);
-    (static_cast<QGraphicsRectItem*>(item))->setBrush(Game::getInstance()->getPlayerColor());
+    (static_cast<QGraphicsRectItem*>(item))->setBrush(Qt::gray);
     pen->setWidthF(0);
     (static_cast<QGraphicsRectItem*>(item))->setPen(*pen);
     filled = state;
@@ -55,7 +55,7 @@ bool SquareXOrOItem::checkForSides()
     }
     if(isFourSidesPermanent)
     {
-        (static_cast<QGraphicsRectItem*>(item))->setBrush(Qt::gray);
+        (static_cast<QGraphicsRectItem*>(item))->setBrush(Game::getInstance()->getPlayerColor());
         pen->setWidthF(0);
         (static_cast<QGraphicsRectItem*>(item))->setPen(*pen);
         (static_cast<QGraphicsRectItem*>(item))->update();

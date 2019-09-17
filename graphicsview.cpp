@@ -1,14 +1,12 @@
 #include "graphicsview.h"
 
-GraphicsView::GraphicsView(QWidget *parent) : QGraphicsView(parent)
+GraphicsView::GraphicsView(Game *game, QWidget *parent) : QGraphicsView(parent)
 {
     scene = new QGraphicsScene;
     setScene(scene);
     scene->setBackgroundBrush(QBrush(Qt::black,Qt::BrushStyle::SolidPattern));
 
-    int areaSize = 5;
-
-    guiElements.reset(new GuiElements(areaSize, pointsStep));
+    guiElements.reset(new GuiElements(game->getAreaSize(), pointsStep));
     auto lines = guiElements->getLines();
     auto squares = guiElements->getSquares();
 

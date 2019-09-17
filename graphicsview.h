@@ -18,7 +18,7 @@
 class GraphicsView : public QGraphicsView
 {
 public:
-    explicit GraphicsView(QWidget *parent = nullptr);
+    explicit GraphicsView(Game *game, QWidget *parent = nullptr);
 protected:
     void mousePressEvent(QMouseEvent *event) override;
 protected slots:

@@ -144,9 +144,17 @@ void Line::mousePressEvent(QGraphicsSceneMouseEvent *event)
             isPermanent = true;
             pen->setWidthF(4);
             pen->setColor(Qt::green);
-            squares.first->checkForSides();
-            squares.second->checkForSides();
             update();
+            if(squares.first->checkForSides())
+            {
+                squares.second->checkForSides();
+                return;
+            }
+            else if(squares.second->checkForSides())
+            {
+                return;
+            }
+            Game::getInstance()->nextPlayerTurn();
         }
     }
 }

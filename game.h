@@ -2,24 +2,32 @@
 #define GAME_H
 
 #include <QColor>
+#include <vector>
 
-// Only one game at the same time
+/**
+ * @brief The Game class
+ * Only one game at the same time
+ * Singleton pattern
+ */
 
 class Game
 {
     Game();
 public:
-    Game(const Game &) = delete;
     Game& operator=(const Game ) = delete;
     static Game *getInstance();
 
-    void startNewGame(int areaSize, int playersCount);
+    void startNewGame(int _areaSize, unsigned long long _playersCount);
     int getAreaSize();
     QColor getPlayerColor() const;
+    void nextPlayerTurn();
 private:
     static Game *game;
+    static std::vector<QColor> playersColors;
 
-    int areaSize{0};
+    int areaSize{3};
+    unsigned long long playersCount{2};
+    unsigned long long player{0};
 };
 
 #endif // GAME_H
